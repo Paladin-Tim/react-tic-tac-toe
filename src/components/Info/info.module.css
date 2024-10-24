@@ -1,0 +1,31 @@
+.gameInfo {
+  max-width: 40%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 1rem 0 2rem;
+}
+
+.gameHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.playerId {
+  padding-left: 1rem;
+  aspect-ratio: 1 / 1;
+  height: 2.5rem;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: right;
+}
+
+.playerX {
+  background-color: #01f769;
+  mask-image: url(/src/assets/playerX.svg);
+}
+
+.player0 {
+  background-color: #ffe400;
+  mask-image: url(/src/assets/player0.svg);
+}

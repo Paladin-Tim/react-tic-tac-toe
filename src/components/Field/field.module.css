@@ -1,0 +1,28 @@
+.gameField {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 30%;
+  margin: 0 auto;
+  gap: 0.5rem;
+  padding: 0.7rem;
+  border-radius: 15px;
+  box-shadow: 0px 0px 30px 10px #00d2ff8a;
+  aspect-ratio: 1/1;
+}
+
+.btnWrapper {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 0 2rem;
+}
+
+.btnReload {
+  background: rgb(31 106 156 / 50%);
+  border: none;
+  color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+}
