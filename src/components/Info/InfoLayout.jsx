@@ -1,33 +1,35 @@
-import { useState } from "react";
+import PropTypes from "prop-types";
 import styles from "./info.module.css";
 import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
 
-export const InfoLayout = (props) => {
+export const InfoLayout = ({ currentPlayer, isDraw, isWinner }) => {
   return (
     <>
       <article id="gameInfo" className={styles.gameInfo}>
         <h1 className={styles.gameHeader}>
-          {props.isDraw && "It's draw!"}
-          {!props.isDraw && props.isGameEnded && (
+          {isDraw && "It's draw!"}
+          {!isDraw && isWinner && (
             <>
               <span>The winner is </span>
-              <span
-                className={cx("playerId", `player${props.currentPlayer}`)}
-              ></span>
+              <span className={cx("playerId", `player${currentPlayer}`)}></span>
             </>
           )}
-          {!props.isDraw && !props.isGameEnded && (
+          {!isDraw && !isWinner && (
             <>
               <span>Turn: </span>
-              <span
-                className={cx("playerId", `player${props.currentPlayer}`)}
-              ></span>
+              <span className={cx("playerId", `player${currentPlayer}`)}></span>
             </>
           )}
         </h1>
       </article>
     </>
   );
+};
+
+InfoLayout.propTypes = {
+  currentPlayer: PropTypes.string,
+  isDraw: PropTypes.bool,
+  isWinner: PropTypes.bool,
 };

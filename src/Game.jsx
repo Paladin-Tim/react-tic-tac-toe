@@ -5,7 +5,7 @@ export const Game = () => {
   const [currentPlayer, setCurrentPlayer] = useState("X");
   const [isDraw, setIsDraw] = useState(false);
   const [fields, setFields] = useState(Array(9).fill(""));
-  const isGameEnded = calculateWinner(fields);
+  const isWinner = calculateWinner(fields);
 
   function calculateWinner(fields) {
     const WIN_PATTERNS = [
@@ -21,10 +21,10 @@ export const Game = () => {
     for (let i = 0; i < WIN_PATTERNS.length; i++) {
       const [a, b, c] = WIN_PATTERNS[i];
       if (fields[a] && fields[a] === fields[b] && fields[a] === fields[c]) {
-        return fields[a];
+        return true;
       }
     }
-    return null;
+    return false;
   }
 
   return (
@@ -34,7 +34,8 @@ export const Game = () => {
         setFields={setFields}
         currentPlayer={currentPlayer}
         setCurrentPlayer={setCurrentPlayer}
-        isGameEnded={isGameEnded}
+        isWinner={isWinner}
+        calculateWinner={calculateWinner}
         isDraw={isDraw}
         setIsDraw={setIsDraw}
       />

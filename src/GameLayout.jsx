@@ -1,4 +1,3 @@
-import styles from "./game.module.css";
 import { Field } from "./components/Field/Field";
 import { Info } from "./components/Info/Info";
 
