@@ -11,6 +11,7 @@
     "format": "prettier --whrite ./src"
   },
   "dependencies": {
+    "canvas-confetti": "^1.9.3",
     "classnames": "^2.5.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",

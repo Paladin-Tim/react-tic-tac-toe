@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { GameLayout } from "./GameLayout";
+import confetti from "canvas-confetti";
 
 export const Game = () => {
   const [currentPlayer, setCurrentPlayer] = useState("X");
@@ -21,6 +22,17 @@ export const Game = () => {
     for (let i = 0; i < WIN_PATTERNS.length; i++) {
       const [a, b, c] = WIN_PATTERNS[i];
       if (fields[a] && fields[a] === fields[b] && fields[a] === fields[c]) {
+        setTimeout(() => {
+          confetti({
+            particleCount: 100,
+            startVelocity: 30,
+            spread: 360,
+            origin: {
+              x: Math.random(),
+              y: Math.random() - 0.2,
+            },
+          });
+        }, 800);
         return true;
       }
     }

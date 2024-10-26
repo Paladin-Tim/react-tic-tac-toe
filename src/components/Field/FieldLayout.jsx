@@ -67,6 +67,7 @@ export const FieldLayout = ({
             key={index}
             value={field}
             className={styles.gameCell}
+            disabled={isDraw || isWinner}
           >
             <div
               className={styles.cellContent}
