@@ -1,9 +1,9 @@
 import { FieldLayout } from "./FieldLayout";
 
-export const Field = (props) => {
+export const Field = () => {
   return (
     <>
-      <FieldLayout {...props}></FieldLayout>
+      <FieldLayout></FieldLayout>
     </>
   );
 };

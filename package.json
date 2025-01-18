@@ -11,13 +11,16 @@
     "format": "prettier --whrite ./src"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.5.0",
     "canvas-confetti": "^1.9.3",
     "classnames": "^2.5.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-addons-update": "^15.6.3",
+    "react-dom": "^18.3.1",
+    "redux": "^5.0.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",

@@ -1,11 +1,11 @@
 import { Field } from "./components/Field/Field";
 import { Info } from "./components/Info/Info";
 
-export const GameLayout = (props) => {
+export const GameLayout = () => {
   return (
     <>
-      <Info {...props}></Info>
-      <Field {...props}></Field>
+      <Info></Info>
+      <Field></Field>
     </>
   );
 };

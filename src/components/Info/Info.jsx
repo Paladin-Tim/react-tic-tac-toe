@@ -1,9 +1,9 @@
 import { InfoLayout } from "./InfoLayout";
 
-export const Info = (props) => {
+export const Info = () => {
   return (
     <>
-      <InfoLayout {...props}></InfoLayout>
+      <InfoLayout></InfoLayout>
     </>
   );
 };
