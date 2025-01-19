@@ -1,41 +1,34 @@
-import { useEffect, useState } from "react";
-import { store } from "../../redux/store";
-import PropTypes from "prop-types";
+import { useSelector } from "react-redux";
+import {
+  currentPlayerSelector,
+  isDrawSelector,
+  isWinnerSelector,
+} from "../../redux/selectors";
 import styles from "./info.module.css";
 import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
 
 export const InfoLayout = () => {
-  const [game, setGame] = useState(store.getState());
-
-  useEffect(() => {
-    const unsubscribe = store.subscribe(() => setGame(store.getState()));
-
-    return () => {
-      unsubscribe();
-    };
-  }, []);
+  const currentPlayer = useSelector(currentPlayerSelector);
+  const isWinner = useSelector(isWinnerSelector);
+  const isDraw = useSelector(isDrawSelector);
 
   return (
     <>
       <article id="gameInfo" className={styles.gameInfo}>
         <h1 className={styles.gameHeader}>
-          {game.isDraw && "It's draw!"}
-          {!game.isDraw && game.isWinner && (
+          {isDraw && "It's draw!"}
+          {!isDraw && isWinner && (
             <>
               <span>The winner is </span>
-              <span
-                className={cx("playerId", `player${game.currentPlayer}`)}
-              ></span>
+              <span className={cx("playerId", `player${currentPlayer}`)}></span>
             </>
           )}
-          {!game.isDraw && !game.isWinner && (
+          {!isDraw && !isWinner && (
             <>
               <span>Turn: </span>
-              <span
-                className={cx("playerId", `player${game.currentPlayer}`)}
-              ></span>
+              <span className={cx("playerId", `player${currentPlayer}`)}></span>
             </>
           )}
         </h1>
@@ -43,9 +36,3 @@ export const InfoLayout = () => {
     </>
   );
 };
-
-// InfoLayout.propTypes = {
-//   currentPlayer: PropTypes.string,
-//   isDraw: PropTypes.bool,
-//   isWinner: PropTypes.bool,
-// };
